@@ -12,17 +12,23 @@ const eraseButton = document.querySelector(".ac");
 });
 
 //removendo apenas o último número adicionado no p
-deleteButton.addEventListener(
-  "click",
-  () =>
-    (screen.innerText = screen.innerText.slice(0, screen.innerText.length - 1))
-);
+deleteButton.addEventListener("click", () => {
+  screen.innerText = screen.innerText.slice(0, screen.innerText.length - 1);
+});
 
 //removendo todos os números do p
-eraseButton.addEventListener("click", () => (screen.innerText = ""));
+eraseButton.addEventListener("click", () => {
+  screen.innerText = "";
+});
 
-//adicionando o resultado a tela após o = ser clicado
-equalButton.addEventListener(
-  "click",
-  () => (screen.innerText = eval(screen.innerText))
-);
+//adicionando o resultado a tela após o = ser clicado e removendo o undefined caso o = seja clicado 
+//sem ter nenhum número passado 
+equalButton.addEventListener("click", () => {
+  let expression = screen.innerText.trim();
+  if (expression === '') {
+    screen.innerText = '';
+    return;
+  }
+  let result = eval(expression);
+  screen.innerText = result;
+});

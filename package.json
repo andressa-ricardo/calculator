@@ -1,0 +1,11 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/andressa-ricardo/calculator.git",
+  "author": "andressa-ricardo <andressaricardo30@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 3000"
+  }
+}
